@@ -372,7 +372,7 @@ int fs_lseek(int fd, size_t offset)
     return 0;
 }
 
-//helper function that
+//helper function that returns correct index block
 uint16_t correct_block(uint16_t index, int block){
     if(block == 0){
         return index;
@@ -407,7 +407,7 @@ int first_avail_fat(){
 
 int fs_write(int fd, void *buf, size_t count)
 {
-    /* TODO: Phase 4 */
+    
     if(!mounted) {
          return -1;
     }
